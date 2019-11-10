@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package grupo11.planillaexcel.ventana;
 
 import javax.swing.BorderFactory;
@@ -10,7 +5,7 @@ import javax.swing.JViewport;
 
 /**
  *
- * @author HOME
+ * @author Joaquín León
  */
 public class Planilla extends javax.swing.JPanel {
 
