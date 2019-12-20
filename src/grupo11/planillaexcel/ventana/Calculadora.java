@@ -56,7 +56,12 @@ public class Calculadora implements TableModelListener {
         String line = (String) modelo.getValueAt(e.getFirstRow(), e.getColumn());
         switch (line.charAt(0)) {
             case '=':
-                modelo.setValueAt(String.valueOf(this.expresionNumerica(line)) ,e.getFirstRow(), e.getColumn());
+                modelo.setValueAt(
+                    String.valueOf(
+                        this.expresionNumerica(line))
+                        ,e.getFirstRow()
+                        , e.getColumn()
+                );
                 break;
             default:
         }
