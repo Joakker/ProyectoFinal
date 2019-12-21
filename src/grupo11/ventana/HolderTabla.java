@@ -2,7 +2,7 @@ package grupo11.ventana;
 
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import static grupo11.config.Tabla.*;
+import grupo11.config.Valores;
 
 /**
  *
@@ -13,18 +13,18 @@ public class HolderTabla {
     public static TableModel getModelo() {
         if (modelo != null) return modelo;
         else {
-            modelo = new DefaultTableModel(data, HEADERS) {
+            modelo = new DefaultTableModel(Valores.data, Valores.HEADERS) {
                 @Override
                 public String getColumnName(int index) {
-                    return HEADERS[index];
+                    return Valores.HEADERS[index];
                 }
                 @Override
                 public int getColumnCount() {
-                    return HEADERS.length;
+                    return Valores.HEADERS.length;
                 }
                 @Override
                 public int getRowCount() {
-                    return data.length;
+                    return Valores.data.length;
                 }
                 @Override
                 public boolean isCellEditable(int row, int column) {

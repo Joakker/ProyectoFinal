@@ -4,7 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 
-import static grupo11.config.Ventana.*;
+import grupo11.config.TitleBar;
 
 /**
  *
@@ -17,9 +17,9 @@ public class Ventana extends JFrame {
         this.setLayout(new BorderLayout());
         this.add(new Planilla());
         this.pack();
-        this.setTitle(TITULO);
+        this.setTitle(TitleBar.TITULO);
         Toolkit def = Toolkit.getDefaultToolkit();
-        this.setIconImage(def.getImage(getClass().getResource(ICONO)));
+        this.setIconImage(def.getImage(getClass().getResource(TitleBar.ICONO)));
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setVisible(true);

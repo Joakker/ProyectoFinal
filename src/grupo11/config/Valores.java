@@ -4,7 +4,7 @@ package grupo11.config;
  *
  * @author Joaquín León Ulloa
  */
-public abstract class Tabla {
+public abstract class Valores {
     public static Object[][] data = {
         {1, null, null, null, null, null, null, null},
         {2, null, null, null, null, null, null, null},
