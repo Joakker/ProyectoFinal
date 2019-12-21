@@ -1,22 +1,11 @@
-package grupo11.planillaexcel.ventana;
-
-import java.awt.Dimension;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.TableModel;
+package grupo11.config;
 
 /**
  *
  * @author Joaquín León Ulloa
  */
-public class Planilla extends JPanel {
-    public JTable tabla;
-    private static final String[] headersColumna = {
-        "", "A", "B", "C", "D", "E", "F", "G"
-    };
-    private static Object[][] dataTabla = {
+public abstract class Tabla {
+    public static Object[][] data = {
         {1, null, null, null, null, null, null, null},
         {2, null, null, null, null, null, null, null},
         {3, null, null, null, null, null, null, null},
@@ -33,17 +22,17 @@ public class Planilla extends JPanel {
         {14,null, null, null, null, null, null, null},
         {15,null, null, null, null, null, null, null},
         {16,null, null, null, null, null, null, null},
+        {17,null, null, null, null, null, null, null},
+        {18,null, null, null, null, null, null, null},
+        {19,null, null, null, null, null, null, null},
+        {20,null, null, null, null, null, null, null},
+        {21,null, null, null, null, null, null, null},
+        {22,null, null, null, null, null, null, null},
+        {23,null, null, null, null, null, null, null},
+        {24,null, null, null, null, null, null, null},
+        {25,null, null, null, null, null, null, null},
     };
-    public Planilla() {
-        super();
-        this.tabla = new JTable(dataTabla, headersColumna);
-        tabla.setPreferredSize(new Dimension(640, dataTabla.length*16));
-        TableModel m = tabla.getModel();
-        HolderTabla.setModelo(m);
-        m.addTableModelListener(new Calculadora());
-        JScrollPane headers = new JScrollPane(this.tabla);
-        headers.setPreferredSize(new Dimension(640, (dataTabla.length + 1)*16 + 10));
-        this.add(headers);
-    }
-
+    public static final String[] HEADERS = {
+        "", "A", "B", "C", "D", "E", "F", "G"
+    };
 }

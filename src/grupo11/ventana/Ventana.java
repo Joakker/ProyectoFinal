@@ -1,7 +1,10 @@
-package grupo11.planillaexcel.ventana;
+package grupo11.ventana;
 
 import java.awt.BorderLayout;
+import java.awt.Toolkit;
 import javax.swing.JFrame;
+
+import static grupo11.config.Ventana.*;
 
 /**
  *
@@ -14,7 +17,9 @@ public class Ventana extends JFrame {
         this.setLayout(new BorderLayout());
         this.add(new Planilla());
         this.pack();
-        this.setTitle("Grupo 11 - Planilla Excel");
+        this.setTitle(TITULO);
+        Toolkit def = Toolkit.getDefaultToolkit();
+        this.setIconImage(def.getImage(getClass().getResource(ICONO)));
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setVisible(true);
