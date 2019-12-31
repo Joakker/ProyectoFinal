@@ -1,5 +1,6 @@
 package grupo11.ventana;
 
+import grupo11.util.HolderTabla;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;

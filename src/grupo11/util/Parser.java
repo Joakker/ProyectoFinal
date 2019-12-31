@@ -1,7 +1,5 @@
 package grupo11.util;
 
-import grupo11.config.Regex;
-import grupo11.ventana.HolderTabla;
 import java.util.regex.Matcher;
 
 /**
@@ -18,12 +16,47 @@ public abstract class Parser {
         else if (reemplazo instanceof String) resultado = (String) reemplazo;
         return resultado == null? "0": resultado;
     }
+    private static String parseFuncion(String nombre, String arg) {
+        if (nombre.subSequence(0, 3).equals("rnd")) return String.valueOf(Math.random());
+        arg = arg.replaceFirst("\\(", " ").replaceFirst("\\)", " ").trim();
+        double a = Double.parseDouble(arg);
+        switch (nombre.substring(0, 3)) {
+            case "sin": return String.valueOf(Math.sin(a));
+            case "cos": return String.valueOf(Math.cos(a));
+            case "tan": return String.valueOf(Math.tan(a));
+            case "abs": return String.valueOf(Math.abs(a));
+            case "sqr": return a > 0D ? String.valueOf(Math.sqrt(a)): "0";
+            default: return "0";
+        }
+    }
     
-    public static double numero(Matcher m) { return numero(m, 0); }
-    public static double numero(Matcher m, double fallback) { return Double.parseDouble(m.group());}
-    public static String valorCelda(String s) {
+    public static double numero(Matcher m) { return Double.parseDouble(m.group()); }
+    public static double numero(Matcher m, double fallback) {
+        return m.find()? Double.parseDouble(m.group()): fallback;
+    }
+    public static String celda(String s) {
         Matcher c = Regex.celda(s);
         while (c.find()) s = s.replace(c.group(), Parser.parseCelda(c.group()));
+        return s;
+    }
+    public static String funcion(String s) {
+        Matcher f = Regex.funcion(s);
+        Matcher p = Regex.parentesis(s);
+        while (f.find() && p.find()) {
+            System.out.println(f.group());
+            s = s.replace(f.group(), parseFuncion(f.group(), p.group()));
+        }
+        return s;
+    }
+    
+    public static String constante(String s) {
+        Matcher k = Regex.constante(s);
+        while (k.find()) {
+            switch (k.group()) {
+                case "PI": s = s.replace(k.group(), String.valueOf(Math.PI)); break;
+                case "E": s = s.replace(k.group(), String.valueOf(Math.E)); break;
+            }
+        }
         return s;
     }
     
