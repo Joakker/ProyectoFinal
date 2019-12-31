@@ -17,7 +17,8 @@ public abstract class Parser {
         return resultado == null? "0": resultado;
     }
     private static String parseFuncion(String nombre, String arg) {
-        if (nombre.subSequence(0, 3).equals("rnd")) return String.valueOf(Math.random());
+        System.out.println(nombre);
+        if ("rnd".equals(nombre.substring(0, 3))) return String.valueOf(Math.random());
         arg = arg.replaceFirst("\\(", " ").replaceFirst("\\)", " ").trim();
         double a = Double.parseDouble(arg);
         switch (nombre.substring(0, 3)) {
@@ -42,9 +43,11 @@ public abstract class Parser {
     public static String funcion(String s) {
         Matcher f = Regex.funcion(s);
         Matcher p = Regex.parentesis(s);
-        while (f.find() && p.find()) {
-            System.out.println(f.group());
-            s = s.replace(f.group(), parseFuncion(f.group(), p.group()));
+        while (f.find() ){
+            String a;
+            if (p.find()) a = p.group();
+            else a = "()";
+            s = s.replace(f.group(), parseFuncion(f.group(), a));
         }
         return s;
     }
