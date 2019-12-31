@@ -6,14 +6,17 @@ import javax.swing.event.TableModelListener;
 import java.util.regex.Matcher;
 
 import static grupo11.util.HolderTabla.getModelo;
-import grupo11.util.Regex;
+import grupo11.config.Regex;
 import grupo11.util.Parser;
 
 /**
+ * 
+ * Escucha a Planilla por cambios en las celdas y calcula las fórmulas
+ * que ingresa el usuario
  *
  * @author Joaquín León Ulloa
  */
-public class Calculadora implements TableModelListener {    
+public class Calculadora implements TableModelListener {
     private double expresionNumerica(String s) {
         s = Parser.celda(s);
         s = Parser.constante(s);

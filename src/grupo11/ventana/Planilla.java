@@ -7,11 +7,16 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 /**
+ * 
+ * Representa la planilla excel. Contiene a JScrollPane y JTable. También
+ * fija el modelo de JTable
  *
  * @author Joaquín León Ulloa
+ * @see grupo11.util.HolderTabla
+ * @see grupo11.ventana.Calculadora
  */
 public class Planilla extends JPanel {
-    public final JTable tabla;
+    private final JTable tabla;
     public Planilla() {
         super();
         this.tabla = new JTable();

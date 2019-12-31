@@ -1,10 +1,14 @@
 package grupo11.util;
 
 import java.util.regex.Matcher;
+import grupo11.config.Regex;
 
 /**
+ * Clase abstracta que hace el trabajo de analizar la entrada de texto
+ * del usuario. Solamente se invoca si el texto comienza con un "="
  *
  * @author Joaquín León Ulloa
+ * @see grupo11.ventana.Calculadora
  */
 public abstract class Parser {
     private static String parseCelda(String s) {
@@ -17,14 +21,13 @@ public abstract class Parser {
         return resultado == null? "0": resultado;
     }
     private static String parseFuncion(String nombre, String arg) {
-        System.out.println(nombre);
-        if ("rnd".equals(nombre.substring(0, 3))) return String.valueOf(Math.random());
+        if ("rnd".equals(nombre)) return String.valueOf(Math.random());
         arg = arg.replaceFirst("\\(", " ").replaceFirst("\\)", " ").trim();
         double a = Double.parseDouble(arg);
-        switch (nombre.substring(0, 3)) {
+        switch (nombre) {
             case "sin": return String.valueOf(Math.sin(a));
             case "cos": return String.valueOf(Math.cos(a));
-            case "tan": return String.valueOf(Math.tan(a));
+            case "tan": System.out.println(Math.tan(a)); return String.valueOf(Math.tan(a));
             case "abs": return String.valueOf(Math.abs(a));
             case "sqr": return a > 0D ? String.valueOf(Math.sqrt(a)): "0";
             default: return "0";
@@ -43,11 +46,9 @@ public abstract class Parser {
     public static String funcion(String s) {
         Matcher f = Regex.funcion(s);
         Matcher p = Regex.parentesis(s);
-        while (f.find() ){
-            String a;
-            if (p.find()) a = p.group();
-            else a = "()";
-            s = s.replace(f.group(), parseFuncion(f.group(), a));
+        while (f.find()){
+            String a = p.find()? p.group(): "()";
+            s = s.replace(f.group(), parseFuncion(f.group(), a)).replace(a, "");
         }
         return s;
     }

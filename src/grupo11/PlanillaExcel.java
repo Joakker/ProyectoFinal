@@ -4,9 +4,11 @@ import grupo11.ventana.Ventana;
 
 /**
  *
+ * Representa el programa. Es la base de toda la aplicación
+ * 
  * @author Joaquín León Ulloa
  */
-public class PlanillaExcel {
+public abstract class PlanillaExcel {
 
     /**
      *
@@ -17,6 +19,6 @@ public class PlanillaExcel {
      * 
      */
     public static void main(String[] args) {
-        new Ventana();
-    }
+        System.out.println(Math.sin(Math.PI));
+        new Ventana(); }
 }

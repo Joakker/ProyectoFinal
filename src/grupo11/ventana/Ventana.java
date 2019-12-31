@@ -8,9 +8,27 @@ import grupo11.config.TitleBar;
 
 /**
  *
+ * Representa la ventana que ve el usuario, al igual que
+ * todas sus propiedades
+ * 
  * @author Joaquín León Ulloa
  */
 public class Ventana extends JFrame {
+    /**
+     * Constructor de la clase. Las propiedades por defecto son:
+     * <dl>
+     *  <dt>Operación al cierre</dt>
+     *      <dd>JFrame.EXIT_ON_CLOSE</dd>
+     *  <dt>Layout</dt>
+     *      <dd>BorderLayout</dd>
+     *  <dt>Icono de Ventana</dt>
+     *      <dd>/grupo11/config/icono.png</dd>
+     *  <dt>Posición en la pantalla</dt>
+     *      <dd>Centro</dd>
+     *  <dt>Redimensionable</dt>
+     *      <dd>No</dd>
+     * </dl>
+     */
     public Ventana() {
         super();
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);

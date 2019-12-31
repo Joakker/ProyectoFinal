@@ -1,10 +1,17 @@
 package grupo11.config;
 
 /**
+ * 
+ * Representa los valores de la planilla al iniciar la aplicación
  *
  * @author Joaquín León Ulloa
+ * @see grupo11.util.HolderTabla
  */
 public abstract class Valores {
+
+    /**
+     *  Valores de las celdas por defecto. La primera columna no es editable
+     */
     public static Object[][] data = {
         {1, null, null, null, null, null, null, null},
         {2, null, null, null, null, null, null, null},
@@ -32,6 +39,10 @@ public abstract class Valores {
         {24,null, null, null, null, null, null, null},
         {25,null, null, null, null, null, null, null},
     };
+
+    /**
+     * Títulos de las columnas
+     */
     public static final String[] HEADERS = {
         "", "A", "B", "C", "D", "E", "F", "G"
     };
