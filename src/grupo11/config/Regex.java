@@ -12,12 +12,12 @@ import java.util.regex.Matcher;
  * @author Joaquín León Ulloa
  */
 public abstract class Regex {
-    private static final String NUMERO = "-?\\d+(\\.\\d+)?((e|E)-?\\d+)?";
-    private static final String OPERADOR = "(\\+|-|\\*|/|\\^)";
-    private static final String CELDA = "\\$[A-G][1-2]?[0-9]";
-    private static final String FUNCION = "(sqr|rnd|sin|cos|tan|abs)";
-    private static final String PARENTESIS = "\\((-?\\d+(\\.\\d+)?((e|E)-?\\d+)?)?\\)";
-    private static final String CONSTANTE = "(PI|E)";
+    private static final String NUMERO      = "-?\\d+(\\.\\d+)?((e|E)-?\\d+)?";
+    private static final String OPERADOR    = "(\\+|-|\\*|/|\\^)";
+    private static final String CELDA       = "\\$[A-G][1-2]?[0-9]";
+    private static final String FUNCION     = "(sqr|rnd|sin|cos|tan|abs)";
+    private static final String PARENTESIS  = "\\((-?\\d+(\\.\\d+)?((e|E)-?\\d+)?)?\\)";
+    private static final String CONSTANTE   = "(PI|E)";
         
     /**
      * 
