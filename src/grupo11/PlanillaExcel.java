@@ -6,7 +6,7 @@ import grupo11.ventana.Ventana;
  *
  * Representa el programa. Es la base de toda la aplicación
  * 
- * @author Joaquín León Ulloa
+ * @author Grupo 11
  */
 public abstract class PlanillaExcel {
 
@@ -19,6 +19,6 @@ public abstract class PlanillaExcel {
      * 
      */
     public static void main(String[] args) {
-        System.out.println(Math.sin(Math.PI));
-        new Ventana(); }
+        new Ventana(); 
+    }
 }

@@ -11,7 +11,7 @@ import grupo11.config.TitleBar;
  * Representa la ventana que ve el usuario, al igual que
  * todas sus propiedades
  * 
- * @author Joaquín León Ulloa
+ * @author Grupo 11
  */
 public class Ventana extends JFrame {
     /**

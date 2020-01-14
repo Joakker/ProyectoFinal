@@ -11,7 +11,7 @@ import javax.swing.JTable;
  * Representa la planilla excel. Contiene a JScrollPane y JTable. También
  * fija el modelo de JTable
  *
- * @author Joaquín León Ulloa
+ * @author Grupo 11
  * @see grupo11.util.HolderTabla
  * @see grupo11.ventana.Calculadora
  */

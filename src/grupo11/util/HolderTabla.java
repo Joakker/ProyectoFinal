@@ -9,7 +9,7 @@ import grupo11.ventana.Calculadora;
  * 
  * Holder para el TableModel de la planilla
  *
- * @author Joaquín León Ulloa
+ * @author Grupo 11
  * @see grupo11.ventana.Calculadora
  */
 public  abstract class HolderTabla {

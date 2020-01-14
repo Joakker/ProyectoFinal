@@ -4,7 +4,7 @@ package grupo11.config;
  *
  * Recursos que usa la ventana, como el título e icono
  * 
- * @author Joaquín León Ulloa
+ * @author Grupo 11
  */
 public abstract class TitleBar {
 

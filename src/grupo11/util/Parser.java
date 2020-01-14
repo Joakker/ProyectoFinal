@@ -7,7 +7,7 @@ import grupo11.config.Regex;
  * Clase abstracta que hace el trabajo de analizar la entrada de texto
  * del usuario. Solamente se invoca si el texto comienza con un "="
  *
- * @author Joaquín León Ulloa
+ * @author Grupo 11
  * @see grupo11.ventana.Calculadora
  */
 public abstract class Parser {

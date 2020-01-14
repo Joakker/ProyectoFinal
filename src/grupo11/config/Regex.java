@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
  * entra en alguna de las celdas de la planilla.
  *
  * @see grupo11.util.Parser
- * @author Joaquín León Ulloa
+ * @author Grupo 11
  */
 public abstract class Regex {
     private static final String NUMERO      = "-?\\d+(\\.\\d+)?((e|E)-?\\d+)?";
