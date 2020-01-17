@@ -24,6 +24,7 @@ public abstract class Parser {
         if ("rnd".equals(nombre)) return String.valueOf(Math.random());
         arg = arg.replaceFirst("\\(", " ").replaceFirst("\\)", " ").trim();
         double a = Double.parseDouble(arg);
+        
         switch (nombre) {
             case "sin": return String.valueOf(Math.sin(a));
             case "cos": return String.valueOf(Math.cos(a));

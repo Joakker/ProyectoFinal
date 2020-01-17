@@ -35,6 +35,6 @@ public class Celda {
     public ArrayList<Celda> getPars() { return this.pars; }
     @Override
     public String toString() {
-        return String.format("Celda(%d, %d) - linea: %s", this.x, this.y, this.linea);
+        return this.linea;
     }
 }

@@ -4,6 +4,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import grupo11.config.Valores;
 import grupo11.ventana.Calculadora;
+import grupo11.ventana.Celda;
 
 /**
  * 
@@ -14,6 +15,7 @@ import grupo11.ventana.Calculadora;
  */
 public  abstract class HolderTabla {
     private static TableModel modelo = null;
+    private static Calculadora calc;
 
     /**
      * Crea/Retorna un DefaultTableModel que reporta a una instancia de calculadora
@@ -24,16 +26,24 @@ public  abstract class HolderTabla {
         else {
             modelo = new DefaultTableModel(Valores.data, Valores.HEADERS) {
                 @Override
-                public String getColumnName(int index) { return Valores.HEADERS[index]; }
+                public String   getColumnName(int index)    { return Valores.HEADERS[index]; }
                 @Override
-                public int getColumnCount() { return Valores.HEADERS.length; }
+                public int      getColumnCount()            { return Valores.HEADERS.length; }
                 @Override
-                public int getRowCount() { return Valores.data.length; }
+                public int      getRowCount()               { return Valores.data.length;    }
                 @Override
-                public boolean isCellEditable(int row, int column) { return column != 0; }
+                public boolean  isCellEditable(int row, int column) { return column != 0;    }
             };
-            modelo.addTableModelListener(new Calculadora());
+            calc = new Calculadora();
+            modelo.addTableModelListener(calc);
             return modelo;
         }
+    }
+    /**
+     * Retorna la data que contiene la planilla, de modo que pueda ser escrita
+     * a un archivo.
+     */
+    public static Celda[][] getCeldas() {
+        return calc.data;
     }
 }

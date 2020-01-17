@@ -18,7 +18,5 @@ public abstract class PlanillaExcel {
      * @param args No es usado
      * 
      */
-    public static void main(String[] args) {
-        new Ventana(); 
-    }
+    public static void main(String[] args) { new Ventana(); }
 }
